@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morgock AI — Signal Intelligence</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-mark">MORGOCK // BOOTING SIGNAL</div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="trace"><div class="trace-fill" id="traceFill"></div></div>
+
+<header>
+  <nav>
+    <div class="logo"><span class="logo-dot"></span>MORGOCK<span style="color:var(--muted)">.ai</span></div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◐</button>
+      <a href="#contact" class="btn btn-primary" style="padding:10px 20px;">Get started</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="justify-content:center;">Get started</a>
+</div>
+
+<section class="hero" id="home">
+  <canvas id="particles"></canvas>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Signal intelligence platform</div>
+      <h1>Turn raw data into <span class="accent">decisions</span> your team can act on today.</h1>
+      <div class="typewriter" id="typewriter"></div>
+      <p class="lead">Morgock AI builds automation, analytics, and machine intelligence that plug straight into how your business already works — no rip-and-replace required.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a demo →</a>
+        <a href="#services" class="btn btn-ghost">Explore services</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>120+</strong><span>Deployments shipped</span></div>
+        <div><strong>98.4%</strong><span>Model uptime</span></div>
+        <div><strong>4.2x</strong><span>Avg. efficiency gain</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="tag">live_signal.stream</span>
+      <canvas id="waveform"></canvas>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we build</div>
+      <h2>Five ways we put AI to work</h2>
+      <p>Each engagement starts with your workflow, not our roadmap. Pick a lane below or combine a few.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="1.6"/><path d="M12 22V12M3 7l9 5 9-5" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>AI Solutions</h3>
+        <p>Custom models and copilots trained on your data, built to fit inside your existing tools rather than replace them.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-7 4 14 2-7h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>AI Automation</h3>
+        <p>Repetitive, rule-based work handed off to agents that run 24/7 and escalate only when a human is truly needed.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4v16h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 16l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Web Development</h3>
+        <p>Fast, accessible product and marketing sites built by engineers who ship, not just prototype.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="4" height="10" stroke="currentColor" stroke-width="1.6"/><rect x="10" y="5" width="4" height="15" stroke="currentColor" stroke-width="1.6"/><rect x="16" y="13" width="4" height="7" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Data Analytics</h3>
+        <p>Dashboards and pipelines that turn scattered logs and spreadsheets into a single source of truth.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Digital Marketing</h3>
+        <p>Growth campaigns backed by the same models we ship in production, so targeting improves with every cycle.</p>
+      </div>
+
+      <div class="service-card reveal" style="display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg, rgba(107,255,176,.08), rgba(138,124,255,.08));">
+        <h3 style="margin-bottom:12px;">Not sure where to start?</h3>
+        <p style="margin-bottom:20px;">Tell us the workflow that's slowing you down — we'll map the shortest path to fixing it.</p>
+        <a href="#contact" class="btn btn-ghost" style="align-self:flex-start;">Talk to us →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--ink-2);">
+  <div class="wrap about">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <div class="eyebrow">Who we are</div>
+      <h2>Built by engineers who got tired of AI theater</h2>
+    </div>
+    <div>
+      <div class="about-copy reveal">
+        <p>Morgock AI started as a two-person team automating internal reporting for a logistics company. Three years later, we run signal-processing infrastructure for teams who need models that actually hold up in production.</p>
+        <p>We're small on purpose. Every client works directly with the engineers building their system — no account layers between you and the people who understand your stack.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card reveal">
+          <div class="eyebrow" style="margin-bottom:6px;">Vision</div>
+          <p>A world where every team, regardless of size, has access to intelligence infrastructure that used to require a research lab.</p>
+        </div>
+        <div class="about-card reveal">
+          <div class="eyebrow" style="margin-bottom:6px;">Mission</div>
+          <p>Ship AI systems that are measured by hours saved and errors caught — not by how impressive the demo looked.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why teams choose us</div>
+      <h2>Five reasons clients stay past the first project</h2>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item">
+        <span class="idx">01</span>
+        <h3>Innovation</h3>
+        <p>We prototype in weeks, not quarters, and aren't afraid to kill an approach that isn't working.</p>
+      </div>
+      <div class="why-item">
+        <span class="idx">02</span>
+        <h3>Expertise</h3>
+        <p>Every engagement is led by engineers who've shipped production ML, not just slide decks.</p>
+      </div>
+      <div class="why-item">
+        <span class="idx">03</span>
+        <h3>Automation</h3>
+        <p>We design systems to run unattended by default, with humans in the loop only where it matters.</p>
+      </div>
+      <div class="why-item">
+        <span class="idx">04</span>
+        <h3>Scalability</h3>
+        <p>What we build for 10 users works the same way at 10,000 — we design for that from day one.</p>
+      </div>
+      <div class="why-item">
+        <span class="idx">05</span>
+        <h3>Customer satisfaction</h3>
+        <p>Fixed-scope pilots before any long-term commitment, so you see results before you sign anything bigger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--ink-2);">
+  <div class="wrap contact-wrap">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="font-size:32px;margin-bottom:16px;">Let's map your first pilot</h2>
+      <p>Tell us a bit about what you're working on. We reply within one business day.</p>
+      <ul>
+        <li><span class="dot"></span> hello@morgock.ai</li>
+        <li><span class="dot"></span> +1 (415) 555-0148</li>
+        <li><span class="dot"></span> San Francisco · Remote-first</li>
+      </ul>
+    </div>
+    <form id="contactForm" class="reveal" novalidate>
+      <div class="field" id="nameField">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="Ada Lovelace">
+        <small class="error">Please enter your full name.</small>
+      </div>
+      <div class="field" id="emailField">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="ada@company.com">
+        <small class="error">Please enter a valid email address.</small>
+      </div>
+      <div class="field" id="messageField">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="What are you looking to build?"></textarea>
+        <small class="error">Message should be at least 10 characters.</small>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send message →</button>
+      <div class="form-status" id="formStatus">Message received — we'll be in touch shortly.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-dot"></span>MORGOCK<span style="color:var(--muted)">.ai</span></div>
+        <p>Signal intelligence infrastructure for teams who need AI that holds up in production.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">AI Solutions</a>
+        <a href="#services">Automation</a>
+        <a href="#services">Analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Morgock AI. All rights reserved.</span>
+      <span>Signal status: <span style="color:var(--signal);">nominal</span></span>
+ 
+ <strong class="counter" data-target="120">0</strong>
+
+<strong class="counter" data-target="98">0</strong>
+
+<strong class="counter" data-target="4">0</strong>   </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
