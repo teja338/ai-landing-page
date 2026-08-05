@@ -1,0 +1,853 @@
+/* ===============================
+   GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   VARIABLES
+==================================*/
+
+:root{
+
+--bg:#080B10;
+--bg2:#111827;
+--card:#141A22;
+--text:#ffffff;
+--muted:#9CA3AF;
+
+--primary:#6BFFB0;
+--secondary:#8A7CFF;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+/* ===============================
+   RESET
+==================================*/
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+/* ===============================
+   ANIMATED GRID BACKGROUND
+==================================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+background-size:50px 50px;
+
+z-index:-3;
+
+}
+
+/* ===============================
+   GLOW EFFECTS
+==================================*/
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+background:radial-gradient(circle,var(--primary),transparent 70%);
+
+opacity:.06;
+
+top:-250px;
+right:-200px;
+
+animation:moveGlow 10s ease-in-out infinite;
+
+z-index:-2;
+
+}
+
+@keyframes moveGlow{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(80px);
+
+}
+
+}
+
+/* ===============================
+   HERO
+==================================*/
+
+.hero{
+
+min-height:45vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:80px 20px;
+
+}
+
+.hero h1{
+
+font-size:65px;
+
+font-weight:800;
+
+background:linear-gradient(90deg,#6BFFB0,#8A7CFF);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+color:var(--muted);
+
+max-width:700px;
+
+line-height:1.8;
+
+}
+
+/* ===============================
+   BACK BUTTON
+==================================*/
+
+.back{
+
+position:fixed;
+
+top:25px;
+left:25px;
+
+padding:14px 25px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:10px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.4s;
+
+z-index:1000;
+
+}
+
+.back:hover{
+
+background:var(--primary);
+
+color:black;
+
+transform:translateY(-4px);
+
+}
+
+/* ===============================
+   PROJECT SECTION
+==================================*/
+
+.projects{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:45px;
+
+padding-bottom:80px;
+
+}
+
+/* ===============================
+   PROJECT CARD
+==================================*/
+
+.project-card{
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:35px;
+
+background:rgba(20,26,34,.75);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.45s;
+
+position:relative;
+
+}
+
+/* Gradient Line */
+
+.project-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:4px;
+
+background:linear-gradient(90deg,#6BFFB0,#8A7CFF);
+
+transform:scaleX(0);
+
+transition:.4s;
+
+transform-origin:left;
+
+}
+
+.project-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.project-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 20px 60px rgba(107,255,176,.18);
+
+}
+
+/* ===============================
+   PROJECT IMAGE
+==================================*/
+
+.project-image{
+
+overflow:hidden;
+
+height:100%;
+
+}
+
+.project-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.7s;
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ===============================
+   PROJECT CONTENT
+==================================*/
+
+.project-content{
+
+padding:40px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.project-content h2{
+
+font-size:36px;
+
+margin-bottom:18px;
+
+}
+
+.project-content p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+font-size:16px;
+
+margin-bottom:25px;
+
+}
+/*==================================
+    TECH STACK BADGES
+==================================*/
+
+.tech-stack{
+
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+
+margin-bottom:28px;
+
+}
+
+.tech-stack span{
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:rgba(107,255,176,.08);
+
+border:1px solid rgba(107,255,176,.25);
+
+color:#6BFFB0;
+
+font-size:13px;
+
+font-weight:600;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.tech-stack span:hover{
+
+background:#6BFFB0;
+
+color:#000;
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 25px rgba(107,255,176,.35);
+
+}
+
+/*==================================
+    BUTTONS
+==================================*/
+
+.project-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.project-buttons a{
+
+text-decoration:none;
+
+padding:14px 28px;
+
+border-radius:10px;
+
+font-weight:700;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Live Button */
+
+.live-btn{
+
+background:linear-gradient(135deg,#6BFFB0,#42F5A7);
+
+color:#000;
+
+}
+
+.live-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 15px 35px rgba(107,255,176,.4);
+
+}
+
+/* Github Button */
+
+.github-btn{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.1);
+
+color:white;
+
+}
+
+.github-btn:hover{
+
+border-color:#6BFFB0;
+
+color:#6BFFB0;
+
+transform:translateY(-5px);
+
+}
+
+/*==================================
+    RIPPLE EFFECT
+==================================*/
+
+.project-buttons a::before{
+
+content:"";
+
+position:absolute;
+
+width:0;
+height:0;
+
+background:rgba(255,255,255,.25);
+
+border-radius:50%;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.6s;
+
+}
+
+.project-buttons a:hover::before{
+
+width:320px;
+height:320px;
+
+}
+
+/*==================================
+    ICON ANIMATION
+==================================*/
+
+.project-content h2{
+
+transition:.4s;
+
+}
+
+.project-card:hover h2{
+
+transform:translateX(8px);
+
+color:#6BFFB0;
+
+}
+
+/*==================================
+    PARAGRAPH
+==================================*/
+
+.project-content p{
+
+transition:.4s;
+
+}
+
+.project-card:hover p{
+
+color:#d7d7d7;
+
+}
+
+/*==================================
+    CARD GLOW
+==================================*/
+
+.project-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:20px;
+
+padding:1px;
+
+background:linear-gradient(130deg,#6BFFB0,#8A7CFF);
+
+mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+mask-composite:exclude;
+-webkit-mask-composite:xor;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.project-card:hover::after{
+
+opacity:1;
+
+}
+
+/*==================================
+    FLOATING ANIMATION
+==================================*/
+
+.project-card{
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.project-card:nth-child(2){
+
+animation-delay:1s;
+
+}
+
+.project-card:nth-child(3){
+
+animation-delay:2s;
+
+}
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/*==================================
+    IMAGE OVERLAY
+==================================*/
+
+.project-image{
+
+position:relative;
+
+}
+
+.project-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+transparent,
+
+rgba(0,0,0,.25)
+
+);
+
+opacity:0;
+
+transition:.5s;
+
+}
+
+.project-card:hover .project-image::after{
+
+opacity:1;
+
+}
+
+/*==================================
+    SCROLLBAR
+==================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6BFFB0;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#8A7CFF;
+
+}
+
+/*==================================
+    RESPONSIVE
+==================================*/
+
+@media(max-width:1000px){
+
+.project-card{
+
+grid-template-columns:1fr;
+
+}
+
+.project-image{
+
+height:260px;
+
+}
+
+.project-content{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+min-height:35vh;
+
+padding:50px 20px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.projects{
+
+width:94%;
+
+}
+
+.project-content h2{
+
+font-size:28px;
+
+}
+
+.project-buttons{
+
+flex-direction:column;
+
+}
+
+.project-buttons a{
+
+text-align:center;
+
+}
+
+.back{
+
+left:15px;
+top:15px;
+
+padding:10px 18px;
+
+}
+
+}
+.project-buttons{
+    position: relative;
+    z-index: 9999;
+}
+
+.project-buttons a{
+    position: relative;
+    z-index: 10000;
+    pointer-events: auto;
+}
+
+.project-card{
+    overflow: visible;
+}
+
+
+
+
+
+.project-card{
+    overflow:hidden;
+    position:relative;
+}
+
+.project-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-content{
+    background:#171b24;
+    padding:25px;
+    position:relative;
+}
+
+
+
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.project-content{
+    flex:1;
+}
+.project-card img{
+    transition:0.5s ease;
+}
+
+.project-card:hover img{
+    transform:scale(1.05);
+}

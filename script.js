@@ -166,19 +166,17 @@
     field.classList.toggle('invalid', !valid);
     return valid;
   }
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+ form.addEventListener('submit', (e) => {
+
     const nameOk = validateField('nameField', v => v.length >= 2);
     const emailOk = validateField('emailField', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
     const messageOk = validateField('messageField', v => v.length >= 10);
-    if(nameOk && emailOk && messageOk){
-      formStatus.classList.add('show');
-      form.reset();
-      setTimeout(() => formStatus.classList.remove('show'), 4000);
-    } else {
-      formStatus.classList.remove('show');
+
+    if(!(nameOk && emailOk && messageOk)){
+        e.preventDefault();
+        formStatus.classList.remove('show');
     }
-  });
+});
   ['name','email','message'].forEach(id => {
     document.getElementById(id).addEventListener('input', () => {
       document.getElementById(id + 'Field').classList.remove('invalid');
